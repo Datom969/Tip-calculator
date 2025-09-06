@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="TipCal.css">
+</head>
+<body>
+  <header class="header" role="banner"><div id="splitter">
+  spli</div>
+</header>
+<main class="main">
+  <section class ="section">
+  <form id="Billform" role="form">
+    <label for="bill" id="bill">Bill <span id="billerror"></span></label>
+<div class="amountCont"><image src="\tip-calculator-app-main\images\icon-dollar.svg" class="image" name="dollar-icon"></image>
+  <input type="number" class="number amount" placeholder="0"></div>
+<label id="select">Select Tip %</label>
+<div class="button">
+<button class="tip" data-action="0.05">5%</button>
+<button class="tip" data-action="0.1">10%</button>
+<button class="tip" data-action="0.15"> 15%</button>
+<button class="tip" data-action="0.25">25%</button>
+<button class="tip" data-action="0.50">50%</button>
+<button class="tip" data-action="0.3">Custom</button>
+</div>
+<label for="people" id="people">Number of People <span id="peopleerror"></span></label>
+<div class="amountCont"><image src="\tip-calculator-app-main\images\icon-person.svg"  class="image" name="person-icon"></image>
+<input type="number" class="number persons" placeholder="0">
+</div>
+</form>
+<figure class="figure">
+  <div class="mytip">
+    <p class="amt">Tip Amount <small>/person</small></p><!--<span class="person">/person<spa>--><span class="tip-amt perperson">$0.00</span></div>
+  <div class="mytip">
+    <p class="amt">Total <small>/person</small></p><span class="tip-amt total">$0.00</span></div>
+  <button id="reset">reset</button>
+</figure>
+</section>
+</main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="TipCal.js"></script>
+</body>
+</html>
