@@ -17,27 +17,25 @@
   <link rel="stylesheet" href="TipCal.css">
 </head>
 <body>
-  <header class="header" role="banner"><div id="splitter">
-  spli</div>
-</header>
 <main class="main">
+  <div id="splitter">spli</div>
   <section class ="section">
-  <form id="Billform" role="form">
+  <form class="Tipform" role="form">
     <label for="bill" id="bill">Bill <span id="billerror"></span></label>
-<div class="amountCont"><image src="\tip-calculator-app-main\images\icon-dollar.svg" class="image" name="dollar-icon"></image>
+<div class="amountCont"><image src="/tip-calculator-app-main/images/icon-dollar.svg" alt="dollar-icon" class="icon"></image>
   <input type="number" class="number amount" placeholder="0"></div>
 <label id="select">Select Tip %</label>
 <div class="button">
 <button class="tip" data-action="0.05">5%</button>
 <button class="tip" data-action="0.1">10%</button>
-<button class="tip" data-action="0.15"> 15%</button>
+<button class="tip" data-action="0.15">15%</button>
 <button class="tip" data-action="0.25">25%</button>
 <button class="tip" data-action="0.50">50%</button>
-<button class="tip" data-action="0.3">Custom</button>
+<input type="number" class="custom" placeholder="Custom">
 </div>
 <label for="people" id="people">Number of People <span id="peopleerror"></span></label>
-<div class="amountCont"><image src="\tip-calculator-app-main\images\icon-person.svg"  class="image" name="person-icon"></image>
-<input type="number" class="number persons" placeholder="0">
+<div class="amountCont"><image src="/tip-calculator-app-main/images/icon-person.svg" alt="person-icon" class="icon"></image>
+<input type="number"  class="number persons" placeholder="0">
 </div>
 </form>
 <figure class="figure">

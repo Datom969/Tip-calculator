@@ -1,36 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/*@font-face {
+    font-family: Space Mono;
+    src: url('/tip-calculator-app-main/font/Space_Mono/SpaceMono-Regular.ttf');
+}*/
 
-*{
-    box-sizing: border-box; 
+*{ 
     margin: 0;
     font-family: Space Mono;
 }
 
 body{
-    position: relative;    
-    height: 100vh;
+    box-sizing: border-box; 
 }
-
-.header {
-    width: 100vw;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0rem;
-    background-color:hsl(185, 41%, 84%);
-    position: absolute;
-    top: 0;
-}
-
 
 #splitter{
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
     text-transform: uppercase;
     text-align: center;
-    position: relative;
-    font-size: 2rem;
+    margin-top: 2rem;
+    font-size: 24px;
     font-weight: 700;
     color: hsl(186, 14%, 43%);
 }
@@ -38,59 +27,61 @@ body{
 #splitter::after{
     content: "TTER";
     display: block;
-    margin-bottom: 8rem;
-    font-size: 2rem;
+    font-size: 24px;
+    margin-bottom: 3rem;
 }
 
 .main{ 
-    position: absolute;
-    top: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: hsl(0, 100%, 100%);
-    width: 100vw;
-    height: 100vh;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
-/*section{
-    margin: 1rem 0.5rem;
-}*/
-
-#Billform {
-    position: absolute;
-    top: 1.5rem;
+    display: grid;
+    place-self: center;
+    width: 70vw;
+    min-height: 100vh;
+    margin: 5rem;
+    position: relative;
+    background-color: hsl(185, 41%, 84%);
+    box-shadow: 5px 5px 15px hsl(184, 68%, 88%);
     
 }
 
-#bill, #select, #people {
-    display: block;
-    color:hsl(183, 100%, 15%);
-    font-weight: 400;
+section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    padding: 2rem;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: hsl(0, 100%, 100%);
+    width: 45vw;
+    box-shadow: 5px 5px 15px hsl(186, 22%, 82%);
 }
 
-#people #bill {
-    margin-top: -2rem;
-    margin-bottom: 1rem;
+.Tipform {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 18vw;
 }
 
-.number {
-    display: block;
-    margin: 3rem, 0;
+.number{
     height: 2.4rem;
-    width: 80vw;
+    width: 18vw;
     border-radius: 5px;
     background-color: hsl(189, 47%, 97%);
+    border: 2px solid transparent;
     outline: none;
     text-align: right;
+    padding-right: 12px;
     color: hsl(183, 100%, 15%);
     font-weight: 700;
     font-size: 18px;
+
+}
+.number::-webkit-inner-spin-button{
+    -webkit-appearance: none;
 }
 
 .number:focus {
@@ -104,12 +95,10 @@ body{
 .amountCont {
     position: relative;
     width: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
-.amountCont .amount {
-    margin: auto;
-}
-.amountCont .image {
+
+.amountCont .icon {
     position: absolute;
     left: 20px;
     top: 50%;
@@ -117,52 +106,73 @@ body{
     pointer-events: none;
 }
 
-.button {
+#bill, #select, #people {
+    color: hsl(183, 100%, 15%);
+}
+
+#people{
+    margin-top: -1rem;
+}
+
+.button{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
-    height: 8rem;
-    width: 80vw;
     margin-top: 1rem;
 }
-.tip{
+
+.tip, .custom{
     font-weight: 700;
     font-size : 16px;
     border-radius: 5px;
     border: none;
     box-shadow: 3px;
     cursor: pointer;
+
 }
 
-.tip:not(:last-child){
+.tip{
     background-color: hsl(183, 100%, 15%);
     color: hsl(0, 100%, 100%);
+    width: 5.5vw;
 }
 
-.tip:last-child {
+.custom, .custom:focus{
     background-color:  hsl(189, 47%, 97%) ;
     color:hsl(183, 100%, 15%);
+    font-size: 14px;
+    outline: none;
+    padding: 0.5rem;
+    width: 4.4vw;
 }
 
-.tip:not(:last-child):hover {
+.custom::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+
+.tip:focus {
     background-color: hsl(172, 67%, 45%);
     color:hsl(183, 100%, 15%);
 }
 
 .figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-between;
     background-color:hsl(183, 100%, 15%);
-    width: 80vw;
-    height: 37vh;
-    margin-top: 22rem;
+    width: 21vw;
+    height: 22vw;
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1.3rem;
 }
 
 .tip-amt {
     color:hsl(172, 67%, 45%);
     font-weight: 700;
-    font-size: 24px;
+    font-size: 19px;
     margin-left: 3rem;
 }
 
@@ -173,7 +183,8 @@ p{
 .mytip{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
     margin-bottom: 1.5rem;
 
 }
@@ -186,18 +197,17 @@ p{
 small {
     display: block;
     color:hsl(184, 14%, 56%);
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
 }
 
 #reset {
-    display: grid;
-    place-self: center;
-    place-items: center;
     background-color: hsl(172, 67%, 45%);
-    width: 15rem;
-    height: 3rem;
-    margin-top: 1rem;
+    color: hsl(183, 100%, 15%);
+    width: 18.5vw;
+    height: 2.5rem;
+    align-self: center;
+    margin-top: 5rem;
     text-transform: uppercase;
     border-radius: 5px;
     font-size: 18px;
@@ -218,60 +228,58 @@ small {
     
 }
 
-@media(min-width: 1024px){
-    body {
-        margin: 0;
+@media(max-width: 850px){
+    body{
+        overflow-x: hidden;
     }
 
-    .header {
+    .main {
+        margin: 0;
+        width: 100vw;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 8rem;
-        width: 80vw;
-        height: 120vh;
         background-color: hsl(185, 41%, 84%);
         box-shadow: 5px 5px 15px hsl(190, 8%, 85%);
     }
+
     #splitter{
-        margin-top: -3rem;
+        margin-top: 3.5rem;
     }
-    .main {
+    section {
         position: absolute;
-        top: 33%;
-        left: 25%;
-        border-radius: 15px;
-        width: 50vw;
-        height: 65vh;
-        background-color:  hsl(0, 100%, 100%);
-        box-shadow: 5px 5px 15px hsl(187, 42%, 75%);
-       
-    }
-
-#splitter {
-    top: -20%;
+        top: 80%;
+        width: 95vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 55px;
 }
 
-#Billform, .number, .button{
-    left: 2rem;
-    width: 16rem;
+    .Tipform, .number, .button{
+        width: 75vw;
+        margin-right: 1rem;
+    
 }
-.number {
-    height: 2rem;
+    .number {
+        height: 3rem;
 }
 
 .figure {
-    position: absolute;
-    right: 2rem;
-    width: 18rem;
-    top: -89%;
-    height: 56vh;
+    margin-top: 1rem;
+    width: 70vw;
+    height: 15rem;
 }
 
 #reset {
-    margin-top: 5.5rem;
-    width: 15rem;
-    height: 2.5rem;
+    margin-top: 3.5rem;
+    width: 70vw;
+    height: 3rem;
+}
+
+.tip{
+    width: 23.5vw;
+}
+.custom {
+    width: 20vw !important;
 }
 }

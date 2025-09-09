@@ -1,4 +1,4 @@
-const billform = document.querySelector("#Billform")
+const billform = document.querySelector(".Tipform")
 billform.addEventListener("submit", e=>{
     e.preventDefault()
 })
@@ -6,6 +6,7 @@ const amount =document.querySelector(".amount")
 const noOfPeople = document.querySelector(".persons")
 
 const tipPercent = document.querySelectorAll(".tip")
+const customButton =document.querySelector(".custom")
 
 const tipPerPerson = document.querySelector(".perperson")
 const totalTip = document.querySelector(".total")
@@ -57,16 +58,28 @@ tipPercent.forEach(button => {
     })
 })
 
+function custom(){
+    if(calculateTip){
+    const customTip = parseFloat(customButton.value)/100
+    const customUnitTip = (amount.value/parseFloat(noOfPeople.value))* customTip
+    const TotalCustomTip = customUnitTip + ((amount.value)/parseInt(noOfPeople.value))
+    tipPerPerson.textContent = "$" + customUnitTip.toFixed(2)
+    totalTip.textContent = "$" + TotalCustomTip.toFixed(2);
+    
+    }
+}
+customButton.addEventListener("input", custom)
+
 function reload(){
     amount.value = ""
     noOfPeople.value = ""
+    customButton.value =""
     if(amount.value=="" && noOfPeople.value ==""){
         tipPerPerson.textContent="$0.00"
         totalTip.textContent = "$0.00"
     }
 }
 
-reset.addEventListener("click", reload
-)
+reset.addEventListener("click", reload)
 
  
